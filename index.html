@@ -1,86 +1,174 @@
-import React from 'react';
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Github, Linkedin } from "lucide-react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdullah Mohammad Muntasir Adnan Jami | Portfolio</title>
+  <meta name="description" content="Portfolio of Abdullah Mohammad Muntasir Adnan Jami, a CSE undergraduate and AI enthusiast.">
+  <!-- Include Lucide Icons (for GitHub and LinkedIn icons) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f4f6; /* bg-gray-100 */
+      color: #374151; /* text-gray-700 */
+    }
 
-export default function Portfolio() {
-  return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <div className="max-w-4xl mx-auto space-y-6">
-        <header className="text-center">
-          <h1 className="text-4xl font-bold">Abdullah Mohammad Muntasir Adnan Jami</h1>
-          <p className="text-lg text-gray-600 mt-2">CSE Undergraduate | Robotics & AI Enthusiast | Generative AI Explorer</p>
-          <div className="mt-4 flex justify-center space-x-4">
-            <a href="https://github.com/AdnanJami" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline"><Github className="mr-2" /> GitHub</Button>
-            </a>
-            <a href="https://www.linkedin.com/in/adnan-jami-27795823b/" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline"><Linkedin className="mr-2" /> LinkedIn</Button>
-            </a>
-          </div>
-        </header>
+    .container {
+      max-width: 1024px; /* max-w-4xl */
+      margin: 0 auto;
+      padding: 24px; /* p-6 */
+    }
 
-        <section>
-          <h2 className="text-2xl font-semibold mb-2">About Me</h2>
-          <Card>
-            <CardContent className="p-4 text-gray-700">
-              I'm a passionate CSE undergraduate from North South University, deeply interested in AI, robotics, and cybersecurity. I've built autonomous robots, participated in international competitions, and I'm currently working on a research paper in generative AI.
-            </CardContent>
-          </Card>
-        </section>
+    header {
+      text-align: center;
+      margin-bottom: 24px; /* space-y-6 equivalent */
+    }
 
-        <section>
-          <h2 className="text-2xl font-semibold mb-2">Projects</h2>
-          <div className="grid gap-4 md:grid-cols-2">
-            <Card>
-              <CardContent className="p-4">
-                <h3 className="font-bold">AI-Controlled Robot</h3>
-                <p className="text-gray-700">Autonomous robot using sensors and AI-based decision-making, with real-time object detection.</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="p-4">
-                <h3 className="font-bold">POS Software</h3>
-                <p className="text-gray-700">A fully functional point-of-sale system built using PHP and SQL for inventory and transaction management.</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="p-4">
-                <h3 className="font-bold">Object Detection System</h3>
-                <p className="text-gray-700">Implemented object recognition models to classify and identify real-world objects using Python.</p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
+    h1 {
+      font-size: 2.25rem; /* text-4xl */
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
 
-        <section>
-          <h2 className="text-2xl font-semibold mb-2">Skills</h2>
-          <Card>
-            <CardContent className="p-4 text-gray-700">
-              <ul className="list-disc list-inside">
-                <li>C, Python, SQL, PHP</li>
-                <li>Generative AI, Object Detection, Robotics</li>
-                <li>Google Colab, Kaggle, Git</li>
-                <li>Basic Networking, Cybersecurity Interest</li>
-              </ul>
-            </CardContent>
-          </Card>
-        </section>
+    .subtitle {
+      font-size: 1.125rem; /* text-lg */
+      color: #6b7280; /* text-gray-600 */
+      margin-bottom: 16px;
+    }
 
-        <section>
-          <h2 className="text-2xl font-semibold mb-2">Achievements</h2>
-          <Card>
-            <CardContent className="p-4 text-gray-700">
-              <ul className="list-disc list-inside">
-                <li>Co-authoring a research paper on Generative AI</li>
-                <li>Participant in ICPC, KIBO Robot Programming Challenge</li>
-                <li>CTF cybersecurity competition experience</li>
-              </ul>
-            </CardContent>
-          </Card>
-        </section>
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px; /* space-x-4 */
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      padding: 8px 16px;
+      border: 1px solid #d1d5db; /* border for outline button */
+      border-radius: 4px;
+      text-decoration: none;
+      color: #374151;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #e5e7eb;
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px; /* mr-2 */
+    }
+
+    h2 {
+      font-size: 1.5rem; /* text-2xl */
+      font-weight: 600; /* font-semibold */
+      margin-bottom: 8px; /* mb-2 */
+    }
+
+    h3 {
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 16px; /* p-4 */
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      margin-bottom: 16px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px; /* gap-4 */
+    }
+
+    @media (min-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+      }
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 20px; /* list-inside equivalent */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Abdullah Mohammad Muntasir Adnan Jami</h1>
+      <p class="subtitle">CSE Undergraduate | Robotics & AI Enthusiast | Generative AI Explorer</p>
+      <div class="social-links">
+        <a href="https://github.com/AdnanJami" target="_blank" rel="noopener noreferrer" class="btn">
+          <i data-lucide="github" class="icon"></i> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/adnan-jami-27795823b/" target="_blank" rel="noopener noreferrer" class="btn">
+          <i data-lucide="linkedin" class="icon"></i> LinkedIn
+        </a>
       </div>
-    </div>
-  );
-}
+    </header>
 
+    <section>
+      <h2>About Me</h2>
+      <div class="card">
+        <p>I'm a passionate CSE undergraduate from North South University, deeply interested in AI, robotics, and cybersecurity. I've built autonomous robots, participated in international competitions, and I'm currently working on a research paper in generative AI.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>AI-Controlled Robot</h3>
+          <p>Autonomous robot using sensors and AI-based decision-making, with real-time object detection.</p>
+        </div>
+        <div class="card">
+          <h3>POS Software</h3>
+          <p>A fully functional point-of-sale system built using PHP and SQL for inventory and transaction management.</p>
+        </div>
+        <div class="card">
+          <h3>Object Detection System</h3>
+          <p>Implemented object recognition models to classify and identify real-world objects using Python.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="card">
+        <ul>
+          <li>C, Python, SQL, PHP</li>
+          <li>Generative AI, Object Detection, Robotics</li>
+          <li>Google Colab, Kaggle, Git</li>
+          <li>Basic Networking, Cybersecurity Interest</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Achievements</h2>
+      <div class="card">
+        <ul>
+          <li>Co-authoring a research paper on Generative AI</li>
+          <li>Participant in ICPC, KIBO Robot Programming Challenge</li>
+          <li>CTF cybersecurity competition experience</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- Initialize Lucide Icons -->
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
